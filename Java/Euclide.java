@@ -34,3 +34,24 @@ private static int findGCD(int number1, int number2) {
     return findGCD(number2, number1%number2);     
   }    
 } 
+
+// Using this version of the method, we get the following result : 
+// --------------------       ----- -----
+// Before 1st iteration        420   96
+// After 1th iteration          36   96
+// After 2nd iteration          36   24
+// After 3rd iteration          12   24
+// After 4th iteration          12    0
+
+// int gcd(int K, int M) {
+//     int k = Math.max(K,M);
+//     int m = Math.min(K,M);
+//     // loop invariant: k ≥ m ∧ GCD(K,M) = GCD(k,m)
+//     while (m != 0) {
+//        int r = k % m;
+//        k = m;
+//        m = r;
+//     }
+//     // At this point, GCD(K,M) = GCD(k,m) = GCD(k,0) = k
+//     return k;
+//  }
